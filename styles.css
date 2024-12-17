@@ -1,0 +1,539 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+/* Body and overall layout */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    height: 100vh;
+    
+}
+
+/* Upper Right Horizontal Navbar */
+.right-navbar {
+    position: fixed;
+    top: 20px; /* Position from the top */
+    right: 20px; /* Position from the right */
+    /* background-color:black; */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    z-index: 1000; /* Make sure it's on top */
+}
+
+.right-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Display the items in a row */
+    justify-content: space-between; /* Space out the items */
+    margin: 0;
+}
+
+.right-navbar ul li {
+    margin: 0 10px; /* Horizontal spacing between items */
+}
+
+.right-navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 5px; /* Optional rounded corners on hover */
+}
+
+.right-navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.255);
+}
+
+/* Main content sections */
+section {
+    padding: 50px;
+    min-height: 100vh;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    margin-top: 70px
+    /* margin-right: 40px; /* Add space on the right to avoid overlap */
+} */
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color:white;
+}
+
+/* Optional: Add some spacing and colors to each section */
+#about {
+   
+}
+
+#perks {
+    
+    
+}
+
+#events {
+}
+
+#team {
+    
+}
+
+#leaderboard {
+    
+}
+
+#contact {
+   
+}
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cube-container {
+    position: relative;
+    perspective: 600px; /* Creates the 3D effect */
+    margin: 202px auto;
+    width: 100%; /* Ensures it takes full width */
+    max-width: 300px; /* Optional: To limit cube size */
+    height: 300px; /* Optional: To limit cube height */
+}
+
+/* Cube */
+.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(45deg);
+    animation: rotate 5s infinite linear;
+    margin: 0 auto; /* Center the cube horizontally within container */
+}
+
+/* Cube faces */
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 2px solid #ddd; /* Optional border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Position the faces */
+.front {
+    transform: translateZ(100px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Cube rotation animation */
+@keyframes rotate {
+    0% {
+        transform: rotateX(-30deg) rotateY(45deg);
+    }
+    100% {
+        transform: rotateX(-30deg) rotateY(405deg); /* Complete one rotation */
+    }
+}
+@media screen and (max-width: 768px) {
+    .right-navbar {
+        width: 160px;
+        padding: 10px;
+    }
+    
+    section {
+        margin-right: 180px;
+        padding: 20px;
+    }
+}
+p{
+    color: white;
+}
+h2{
+    color: white;
+}
+h1{
+    color:#324368;
+    text-align: center;
+    font-size:80px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+/* Ensure the body takes up full height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Position the video as background */
+  .video-background {
+    position: fixed; /* Makes the video fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Keep the video behind other content */
+  }
+  
+  /* Ensure the video fills the entire container */
+  #background-video {
+    object-fit: cover; /* Make sure it covers the entire area */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Style content to appear over the video */
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1; /* Ensure it's above the video */
+  }
+  
+  .content h1 {
+    font-size: 3em;
+  }
+  
+  .content p {
+    font-size: 1.5em;
+  }
+/* Leaderboard Section */
+#leaderboard {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+#leaderboard h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+}
+
+.leaderboard-table th {
+    background-color: #324368;
+    color: white;
+}
+
+.leaderboard-table tr:nth-child(even) {
+    background-color: #333;
+}
+
+.leaderboard-table tr:nth-child(odd) {
+    background-color: #444;
+}
+
+.leaderboard-table tr:hover {
+    background-color: #555;
+}
+
+.leaderboard-table td {
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .leaderboard-table {
+        width: 100%;
+    }
+
+    .leaderboard-table th, .leaderboard-table td {
+        padding: 8px 10px;
+    }
+}
+/* Perk Cards Container */
+.perk-cards-container {
+    display: flex;
+    justify-content: space-between; /* Distribute the cards evenly */
+    flex-wrap: nowrap; /* Prevent wrapping, all cards stay in a single row */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Limit the maximum width of the row */
+    overflow-x: auto; /* Enable horizontal scrolling if cards overflow */
+}
+
+/* Individual Card Styling */
+.perk-card {
+    width: 300px; /* Fixed width for each card */
+    height: 400px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out, background 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover Effect with Gradient Background */
+.perk-card:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    background: linear-gradient(45deg, #ff6f61, #f9c74f); /* Gradient background on hover */
+}
+
+/* Text Inside the Card */
+.perk-card h3 {
+    font-size: 1.8rem;
+    color: #324368;
+    padding: 20px;
+    margin: 0;
+}
+
+.perk-card p {
+    font-size: 1.2rem;
+    color: #324368;
+    padding: 0 20px 20px 20px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Text Color Change on Hover */
+.perk-card:hover h3,
+.perk-card:hover p {
+    color: white; /* Change text color when hovering */
+}
+
+
+
+/* Meet Our Team Section */
+#team {
+    background-color: #324368;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+#team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Team Container to align team members in a row */
+.team-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    gap: 20px; /* Space between each card */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Individual Team Member */
+.team-member {
+    width: 18%; /* Each card takes 18% of the container width */
+    text-align: center;
+    background-color: #fff;
+    color: #324368;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image Styling */
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #324368; /* Border between image and text */
+}
+
+/* Name and Position Styling */
+.team-member h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Hover Effect for Team Member */
+.team-member:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .team-member {
+        width: 80%; /* Cards take 80% of the container width on smaller screens */
+        max-width: 350px;
+    }
+
+    .team-member h3 {
+        font-size: 1.3rem;
+    }
+
+    .team-member p {
+        font-size: 0.9rem;
+    }
+}
+.list{
+    color: #ddd;
+}
+
+.quote{
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+
+    margin: -6rem;
+}
+/* Footer Section */
+#footer {
+    background-color: #324368; /* Dark background for the footer */
+    color: white; /* White text */
+    text-align: center; /* Center the text */
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1rem; /* Set the font size */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Contact Section */
+#contact {
+    padding: 144px 20px;
+    background-color: #324368; /* Background color */
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px; /* Add margin at the bottom to separate it from footer */
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Contact Details */
+.contact-details {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.contact-details .phone,
+.contact-details .social-media {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-details .phone p {
+    font-size: 1.2rem;
+}
+
+.contact-details .social-media ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-details .social-media ul li {
+    margin: 0 10px;
+}
+
+.contact-details .social-media ul li a img {
+    width: 30px; /* Adjust size of the icons */
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.contact-details .social-media ul li a:hover img {
+    transform: scale(1.1); /* Add hover effect */
+}
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+}
+
+#about{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+
+}
+
+.aboutevent{
+    color: #fff;
+}
